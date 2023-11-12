@@ -1,8 +1,8 @@
 "use client";
-import Loader from "@/components/Loader";
-import { useGetPostQuery } from "@/store/features/apiSlice";
+import Loader from "../../../components/Loader";
 import moment from "moment/moment";
 import React from "react";
+import { useGetPostQuery } from "../../../store/features/apiSlice";
 
 const BlogDetail = ({ params }) => {
   const { data, isLoading } = useGetPostQuery(params.slug);

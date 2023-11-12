@@ -1,6 +1,6 @@
-import Nav from "@/components/Nav";
+import Nav from "../components/Nav";
 import "./globals.css";
-import { ReduxProvider } from "@/store/Provider";
+import { ReduxProvider } from "../store/Provider";
 
 export const metadata = {
   title: "BloggIn",

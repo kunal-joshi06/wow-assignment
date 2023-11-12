@@ -1,4 +1,4 @@
-import BlogFeed from "@/components/BlogFeed";
+import BlogFeed from "../components/BlogFeed";
 
 export default function Home() {
   return (

@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import BlogCard from "./BlogCard";
-import { useGetAllPostQuery } from "@/store/features/apiSlice";
 import Loader from "./Loader";
+import { useGetAllPostQuery } from "../store/features/apiSlice";
 
 const BlogFeed = () => {
   const { data, isLoading } = useGetAllPostQuery("");
