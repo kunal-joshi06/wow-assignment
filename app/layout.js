@@ -1,6 +1,5 @@
 import Nav from "../components/Nav";
 import "./globals.css";
-import { ReduxProvider } from "../store/Provider";
 
 export const metadata = {
   title: "BloggIn",
@@ -17,12 +16,10 @@ export default function RootLayout({ children }) {
         <div className="main">
           <div className="gradient" />
         </div>
-        <ReduxProvider>
-          <main className="app">
-            <Nav />
-            {children}
-          </main>
-        </ReduxProvider>
+        <main className="app">
+          <Nav />
+          {children}
+        </main>
       </body>
     </html>
   );
