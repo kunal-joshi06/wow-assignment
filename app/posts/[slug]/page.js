@@ -14,73 +14,53 @@ export default async function BlogDetail({ params }) {
 
   return (
     <>
-      <article className="max-w-2xl px-6 py-12 mx-auto space-y-12 ">
-        <div className="w-full mx-auto space-y-4 text-center">
-          <p className="text-xs font-semibold tracki uppercase">
-            #{params.slug}
-          </p>
-          <h1 className="text-4xl font-bold leadi md:text-5xl">
-            {data.yoast_head_json.og_title}
-          </h1>
-          <p className="text-sm dark:text-gray-400">
-            by{" "}
-            <span className="underline dark:text-violet-400">
-              {data.yoast_head_json.author}
-            </span>{" "}
-            on <time>{moment(data.date).format("MMMM Do YYYY")}</time>
-          </p>
-        </div>
-        <div>
-          <p>{data.yoast_head_json.og_description}</p>
-        </div>
-        <div className="flex justify-end">
-          <a
-            href={data.yoast_head_json.og_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-purple-500 rounded-full shadow-md group"
+      <div className="max-w-screen-xl mx-auto">
+        <main className="mt-10">
+          <div
+            className="mb-4 md:mb-0 w-full max-w-screen-md mx-auto relative"
+            style={{ height: "24em" }}
           >
-            <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-purple-500 group-hover:translate-x-0 ease">
-              <svg
-                class="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </span>
-            <span class="absolute flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
-              Read full article
-            </span>
-            <span class="relative invisible">Read full article</span>
-          </a>
-        </div>
-
-        <div className="pt-12 border-t dark:border-gray-700">
-          <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
+            <div
+              className="absolute left-0 bottom-0 w-full h-full z-10"
+              style={{
+                backgroundImage:
+                  "linear-gradient(180deg,transparent,rgba(0,0,0,.7))",
+              }}
+            ></div>
             <img
-              src="https://source.unsplash.com/75x75/?portrait"
-              alt=""
-              className="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700"
+              src="https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
+              className="absolute left-0 top-0 w-full h-full z-0 object-cover shadow-lg"
             />
-            <div className="flex flex-col">
-              <h4 className="text-lg font-semibold">
-                {data.yoast_head_json.author}
-              </h4>
-              <p className="dark:text-gray-400">
-                {data.yoast_head_json.og_site_name}
-              </p>
+            <div className="p-4 absolute bottom-0 left-0 z-20">
+              <span className="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">
+                #{params.slug}
+              </span>
+              <h2 className="text-4xl font-semibold text-gray-100 leading-tight">
+                {data.yoast_head_json.og_title}
+              </h2>
+              <div className="flex mt-3">
+                <img
+                  src="https://randomuser.me/api/portraits/men/97.jpg"
+                  className="h-10 w-10 rounded-full mr-2 object-cover"
+                />
+                <div>
+                  <p className="font-semibold text-gray-200 text-sm">
+                    {" "}
+                    {data.yoast_head_json.author}{" "}
+                  </p>
+                  <p className="font-semibold text-gray-400 text-xs">
+                    {moment(data.date).format("MMMM Do YYYY")}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </article>
+
+          <div className="px-4 pb-20 lg:px-0 mt-12 text-gray-700 max-w-xs md:max-w-3xl mx-auto text-lg leading-relaxed overflow-auto sm:px-6 md:px-8">
+            {data.content.rendered}
+          </div>
+        </main>
+      </div>
     </>
   );
 }

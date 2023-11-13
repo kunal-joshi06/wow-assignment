@@ -12,8 +12,15 @@ async function getAllPosts() {
 export default async function BlogFeed() {
   const data = await getAllPosts();
   return (
-    <>
-      <div>
+    <section className="py-6 sm:py-12 dark:bg-gray-800 dark:text-gray-100">
+      <div className="container p-6 mx-auto space-y-8">
+        <div className="space-y-2 text-center">
+          <h2 className="text-3xl font-bold">Latest Blogs</h2>
+          <p className="font-serif text-sm dark:text-gray-400">
+            Ignite Your Curiosity: Bloggin- Your Daily Dose of Blogs
+          </p>
+        </div>
+
         {data &&
           data.map((post, index) => (
             <BlogCard
@@ -21,9 +28,12 @@ export default async function BlogFeed() {
               title={post.yoast_head_json.og_title}
               content={post.yoast_head_json.og_description}
               slug={post.id}
+              author={post.yoast_head_json.author}
+              date={post.date}
+              id={post.id}
             />
           ))}
       </div>
-    </>
+    </section>
   );
 }
