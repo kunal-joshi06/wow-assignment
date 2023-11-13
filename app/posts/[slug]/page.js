@@ -30,7 +30,7 @@ export default async function BlogDetail({ params }) {
             on <time>{moment(data.date).format("MMMM Do YYYY")}</time>
           </p>
         </div>
-        <div className="dark:text-gray-100">
+        <div>
           <p>{data.yoast_head_json.og_description}</p>
         </div>
         <div className="flex justify-end">
