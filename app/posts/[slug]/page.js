@@ -4,13 +4,11 @@ import React from "react";
 export default async function BlogDetail({ params }) {
   async function getPost(id) {
     const res = await fetch(`https://wowtalent.live/wp-json/wp/v2/posts/${id}`);
-
     if (!res.ok) {
       throw new Error("Failed to fetch data");
     }
     return res.json();
   }
-
   const data = await getPost(params.slug);
 
   return (
@@ -21,18 +19,18 @@ export default async function BlogDetail({ params }) {
             #{params.slug}
           </p>
           <h1 className="text-4xl font-bold leadi md:text-5xl">
-            {data && data.yoast_head_json.og_title}
+            {data.yoast_head_json.og_title}
           </h1>
           <p className="text-sm dark:text-gray-400">
             by{" "}
             <span className="underline dark:text-violet-400">
-              {data && data.yoast_head_json.author}
+              {data.yoast_head_json.author}
             </span>{" "}
             on <time>{moment(data.date).format("MMMM Do YYYY")}</time>
           </p>
         </div>
         <div className="dark:text-gray-100">
-          <p>{data && data.yoast_head_json.og_description}</p>
+          <p>{data.yoast_head_json.og_description}</p>
         </div>
         <div className="pt-12 border-t dark:border-gray-700">
           <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
@@ -43,10 +41,10 @@ export default async function BlogDetail({ params }) {
             />
             <div className="flex flex-col">
               <h4 className="text-lg font-semibold">
-                {data && data.yoast_head_json.author}
+                {data.yoast_head_json.author}
               </h4>
               <p className="dark:text-gray-400">
-                {data && data.yoast_head_json.og_site_name}
+                {data.yoast_head_json.og_site_name}
               </p>
             </div>
           </div>
