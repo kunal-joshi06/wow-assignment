@@ -14,7 +14,7 @@ export default async function BlogDetail({ params }) {
 
   return (
     <>
-      <article className="max-w-2xl px-6 py-12 mx-auto space-y-12 dark:bg-gray-800 dark:text-gray-50">
+      <article className="max-w-2xl px-6 py-12 mx-auto space-y-12 ">
         <div className="w-full mx-auto space-y-4 text-center">
           <p className="text-xs font-semibold tracki uppercase">
             #{params.slug}
