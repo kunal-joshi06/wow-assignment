@@ -4,7 +4,7 @@ import React from "react";
 
 const Nav = () => {
   return (
-    <nav className="flex items-center justify-between flex-wrap p-6 w-full mb-10 rounded-full">
+    <nav className="flex items-center justify-between flex-wrap p-6 w-full  rounded-full lg:mb-10">
       <Link href="/" className="flex items-center flex-shrink-0  mr-6">
         <Image
           src="/assets/images/blog-icon.png"

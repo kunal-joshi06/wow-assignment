@@ -32,14 +32,14 @@ const BlogCard = ({ title, slug, author, date, content, id }) => {
         <Link
           rel="noopener noreferrer"
           href={`posts/${slug}`}
-          className="inline-flex items-center pt-2 pb-6 space-x-2 text-sm dark:text-violet-400"
+          className="inline-flex justify-end items-center pt-2 pb-6 space-x-2 text-sm dark:text-violet-400 font-bold underline w-fit"
         >
-          <span className="font-bold">Read more</span>
+          Read more
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
-            className="w-4 h-4"
+            className="w-4 h-4 mx-1"
           >
             <path
               fillRule="evenodd"

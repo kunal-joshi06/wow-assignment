@@ -1,6 +1,7 @@
 import moment from "moment/moment";
 import Link from "next/link";
 import React from "react";
+import ScrollToTopButton from "../../../components/ScrollToTop";
 
 export default async function BlogDetail({ params }) {
   async function getPost(id) {
@@ -14,6 +15,7 @@ export default async function BlogDetail({ params }) {
 
   return (
     <>
+      <ScrollToTopButton />
       <div className="max-w-screen-xl mx-auto">
         <main className="mt-10">
           <div
@@ -35,7 +37,7 @@ export default async function BlogDetail({ params }) {
               <span className="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">
                 #{params.slug}
               </span>
-              <h2 className="text-4xl font-semibold text-gray-100 leading-tight">
+              <h2 className="text-2xl font-semibold text-gray-100 leading-tight">
                 {data.yoast_head_json.og_title}
               </h2>
               <div className="flex mt-3">
