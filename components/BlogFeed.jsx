@@ -12,7 +12,7 @@ async function getAllPosts() {
 export default async function BlogFeed() {
   const data = await getAllPosts();
   return (
-    <section className="py-6 sm:py-12 dark:bg-gray-800 dark:text-gray-100">
+    <section className="py-6 sm:py-12  ">
       <div className="container p-6 mx-auto space-y-8">
         <div className="space-y-2 text-center">
           <h2 className="text-3xl font-bold">Latest Blogs</h2>
